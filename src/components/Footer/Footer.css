@@ -12,11 +12,6 @@
     gap: 1rem; 
   }
   
-  .footer-logo {
-    width: 30px;
-    height: 30px;
-    object-fit: contain; 
-  }
   
   .footer-text {
     color: #fff;
