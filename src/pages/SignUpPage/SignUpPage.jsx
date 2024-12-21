@@ -1,5 +1,6 @@
 import React from 'react';
-import './SignUpPage.css';
+import '../LoginPage/LoginPage.css';
+import './SignUpPage.css'
 import Logo from '../../assets/logo/2.png';
 
 const SignUp = () => {
@@ -13,7 +14,7 @@ const SignUp = () => {
                 <input type="text" placeholder="Username" required className="input-field" />
                 <input type="password" placeholder="Password" required className="input-field" />
                 <input type="password" placeholder="Confirm Password" required className="input-field" />
-                <button type="submit" className="submit-button">Sign Up</button>
+                <button type="submit" className="submit-button-one">Sign Up</button>
             </form>
         </div>
     );

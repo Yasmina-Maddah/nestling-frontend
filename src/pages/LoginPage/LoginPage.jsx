@@ -11,7 +11,7 @@ const Login = () => {
             <form>
                 <input type="email" placeholder="Email" required className="input-field" />
                 <input type="password" placeholder="Password" required className="input-field" />
-                <button type="submit" className="submit-button">Login</button>
+                <button type="submit" className="submit-button-two">Login</button>
             </form>
         </div>
     );
