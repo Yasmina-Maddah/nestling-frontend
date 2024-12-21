@@ -14,6 +14,7 @@ const LandingPage = () => {
       <Features />
       <HowItWorks />
       <Resources />
+      <AboutUs />
       {/* Add other sections as needed */}
     </div>
   );
