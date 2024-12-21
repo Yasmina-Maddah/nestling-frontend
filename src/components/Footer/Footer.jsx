@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import Icon from "../../assets/icons/InstagramIcon";
-import Logo from "../../assets/images/1.png";
+import Icon from "../../assets/icons/InstagramIcon.png";
+import Logo from "../../assets/logo/1.png";
 
 const Footer = () => {
   return (
