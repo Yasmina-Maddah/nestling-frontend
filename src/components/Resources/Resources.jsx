@@ -4,13 +4,11 @@ import './Resources.css';
 const resources = [
   {
     title: 'EDRAAK',
-    description: 'Short description of the resource.',
     link: '#', 
     imageClass: 'resource-image-one', 
   },
   {
     title: 'Zero to Three',
-    description: 'Short description of the resource.',
     link: '#',
     imageClass: 'resource-image-two',
   },
@@ -31,6 +29,7 @@ const Resources = () => {
             <div className={`resource-image ${resource.imageClass}`}></div>
             <h3 className="resource-title">{resource.title}</h3>
             <a href={resource.link} className="resource-link">
+              Explore
             </a>
           </div>
         ))}
