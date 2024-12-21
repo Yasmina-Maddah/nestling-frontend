@@ -1,0 +1,25 @@
+.how-it-works-section {
+    padding: 3rem 30px; 
+    text-align: start; 
+    background-color: #f9f9f9; 
+  }
+  
+  .how-it-works-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 37px;
+    color: #000000;
+  }
+  
+  .how-it-works-image-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .how-it-works-image {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
