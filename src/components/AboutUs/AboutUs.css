@@ -1,24 +1,21 @@
-/* About Us Section */
 .about-us-section {
-    padding: 3rem 30px; /* 30px layout grid margin */
-    background-color: #ffffff; /* White background */
+    padding: 3rem 30px; 
+    background-color: #ffffff; 
   }
   
-  /* About Us Container */
   .about-us-container {
-    height: 227px; /* Set the height of the container */
-    display: flex; /* Maintain side-by-side layout */
-    align-items: center; /* Vertically align content */
-    gap: 1.5rem; /* Space between the text and the image */
-    overflow: hidden; /* Prevent overflow */
+    height: 227px; 
+    display: flex; 
+    align-items: center; 
+    gap: 1.5rem; 
+    overflow: hidden; 
   }
   
-  /* Text Section */
   .about-us-text {
-    flex:auto; /* Allow the text to take up proportional space */
+    flex:auto; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the text */
+    justify-content: center; 
     text-align: left;
   }
   
@@ -32,35 +29,33 @@
   .about-us-description {
     font-size: 20px;
     color: #555;
-    line-height: 1.4; /* Adjust line height for compact text */
+    line-height: 1.4; 
   }
   
-  /* Image Section */
   .about-us-image-container {
-    flex: 1; /* Allow the image to take up proportional space */
+    flex: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .about-us-image {
-    max-height: 204px; /* Scale the image to fit the container height */
-    max-width: 204px; /* Prevent the image from overflowing horizontally */
-    object-fit: cover; /* Crop the image to fit the container if necessary */
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    max-height: 204px; 
+    max-width: 204px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .about-us-container {
-      flex-direction: column; /* Stack text and image vertically */
-      height: auto; /* Allow the height to adjust naturally */
-      text-align: center; /* Center align text for smaller screens */
+      flex-direction: column; 
+      height: auto; 
+      text-align: center; 
     }
   
     .about-us-image-container {
-      margin-top: 1rem; /* Add spacing for stacked layout */
+      margin-top: 1rem; 
     }
   }
   
