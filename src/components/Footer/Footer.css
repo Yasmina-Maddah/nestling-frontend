@@ -1,0 +1,40 @@
+.footer {
+    background-color: #03989E; 
+    padding: 1rem 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+  }
+  
+  .footer-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain; 
+  }
+  
+  .footer-text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .footer-instagram-link {
+    display: inline-block;
+  }
+  
+  .footer-instagram-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-instagram-icon:hover {
+    transform: scale(1.1); 
+  }
