@@ -1,6 +1,7 @@
 .about-us-section {
     padding: 3rem 30px; 
-    background-color: #ffffff; 
+    background-color: #ffffff;
+    border-radius: 20px; 
   }
   
   .about-us-container {
