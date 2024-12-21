@@ -4,7 +4,7 @@ import HeroSection from '../../components/HeroSection/HeroSection';
 import Features from '../../components/Features/Features';
 import HowItWorks from '../../components/HowItWorks/HowItWorks';
 import Resources from '../../components/Resources/Resources';
-import Resources from '../../components/AboutUs/AboutUs';
+import AboutUs from '../../components/AboutUs/AboutUs';
 
 
 
