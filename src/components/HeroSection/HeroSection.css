@@ -1,0 +1,44 @@
+
+.hero-section {
+    position: relative;
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: 
+      url('../../assets/images/HeroBackgroundSection.png')  center center no-repeat; 
+    background-size: cover;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); 
+    z-index: 2; 
+  }
+  
+  .hero-title {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 35px;
+  }
+  
+  .hero-subtitle {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+
