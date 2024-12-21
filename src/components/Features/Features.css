@@ -1,0 +1,99 @@
+.features-section {
+  padding: 3rem 30px; 
+  background-color: #f9f9f9; 
+  text-align: start;
+}
+
+.features-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 37px;
+  margin-top: 37px;
+  color: #000000;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 32px; 
+}
+
+.feature-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  width: 403px;
+  height: 226px;
+  border-radius: 30px;
+  margin: 0 auto 1rem auto; 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feature-icon-one {
+  background-image: url('../../assets/images/CreateProfile.png'); 
+}
+
+.feature-icon-two {
+  background-image: url('../../assets/images/SkillDevelopement.png');
+}
+
+.feature-icon-three {
+  background-image: url('../../assets/images/ProgressTracking.png');
+}
+
+.feature-icon-four {
+  background-image: url('../../assets/images/TrackSkill.png');
+}
+
+.feature-icon-five {
+  background-image: url('../../assets/images/Resouces.png');
+}
+
+.feature-icon-six {
+  background-image: url('../../assets/images/StoryVisualization.png');
+}
+
+.feature-title {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 36px;
+  padding-top: 70px;
+  font-weight:normal;
+  margin-bottom: 0.5rem;
+  color: #000000; 
+}
+
+.feature-description {
+  text-align: center;
+  padding-top: 36px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+
