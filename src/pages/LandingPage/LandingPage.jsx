@@ -5,7 +5,7 @@ import Features from '../../components/Features/Features';
 import HowItWorks from '../../components/HowItWorks/HowItWorks';
 import Resources from '../../components/Resources/Resources';
 import AboutUs from '../../components/AboutUs/AboutUs';
-
+import Footer from "../../components/Footer/Footer";
 
 
 const LandingPage = () => {
@@ -17,6 +17,7 @@ const LandingPage = () => {
       <HowItWorks />
       <Resources />
       <AboutUs />
+      <Footer />
       {/* Add other sections as needed */}
     </div>
   );
