@@ -4,7 +4,7 @@
   }
   
   .about-us-container {
-    height: 227px; 
+    height: 180px; 
     display: flex; 
     align-items: center; 
     gap: 1.5rem; 
@@ -27,7 +27,7 @@
   }
   
   .about-us-description {
-    font-size: 20px;
+    font-size: 18px;
     color: #555;
     line-height: 1.4; 
   }
@@ -40,8 +40,8 @@
   }
   
   .about-us-image {
-    max-height: 204px; 
-    max-width: 204px; 
+    max-height: 180px; 
+    max-width: 180px; 
     object-fit: cover; 
     border-radius: 10px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
