@@ -1,7 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
 
-// Import images from the src/assets folder
 import logo from '../../assets/logo/1.png';
 import homeIcon from '../../assets/icons/Home.png';
 import userIcon from '../../assets/icons/Profile.png';
