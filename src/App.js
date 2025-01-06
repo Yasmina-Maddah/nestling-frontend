@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 
 
-
 const App = () => {
   return (
     <Routes>
