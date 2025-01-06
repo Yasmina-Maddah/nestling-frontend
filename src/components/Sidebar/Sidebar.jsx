@@ -9,7 +9,6 @@ import bookIcon from '../../assets/icons/Book.png';
 import resourceIcon from '../../assets/icons/Resource.png';
 import arrowRightIcon from '../../assets/icons/Arrow.png';
 
-
 const Sidebar = () => {
   return (
     <aside className="sidebar">
@@ -18,33 +17,38 @@ const Sidebar = () => {
       </div>
       <nav>
         <ul className="nav-list">
-          <li>
-            <button className="nav-button">
-              <img src={homeIcon} alt="Home" className="nav-icon" />
-            </button>
-          </li>
-          <li>
-            <button className="nav-button">
-              <img src={userIcon} alt="Profile" className="nav-icon" />
-            </button>
-          </li>
-          <li>
-            <button className="nav-button">
-              <img src={chartIcon} alt="Analytics" className="nav-icon" />
-            </button>
-          </li>
-          <li>
-            <button className="nav-button">
-              <img src={bookIcon} alt="Library" className="nav-icon" />
-            </button>
-          </li>
-          <li>
-            <button className="nav-button">
-              <img src={resourceIcon} alt="Ideas" className="nav-icon" />
-            </button>
-          </li>
+          <div className="nav-section">
+            <li>
+              <button className="nav-button">
+                <img src={homeIcon} alt="Home" className="nav-icon" />
+              </button>
+            </li>
+            <li>
+              <button className="nav-button">
+                <img src={userIcon} alt="Profile" className="nav-icon" />
+              </button>
+            </li>
+            <li>
+              <button className="nav-button">
+                <img src={chartIcon} alt="Analytics" className="nav-icon" />
+              </button>
+            </li>
+            <li>
+              <button className="nav-button">
+                <img src={bookIcon} alt="Library" className="nav-icon" />
+              </button>
+            </li>
+          </div>
+          <div className="nav-section">
+            <li>
+              <button className="nav-button">
+                <img src={resourceIcon} alt="Ideas" className="nav-icon" />
+              </button>
+            </li>
+          </div>
         </ul>
       </nav>
+      <div className="spacer" style={{ flexGrow: 1 }}></div> {/* Spacer for separation */}
       <div className="sidebar-footer">
         <button className="nav-button">
           <img src={arrowRightIcon} alt="Next" className="nav-icon" />
