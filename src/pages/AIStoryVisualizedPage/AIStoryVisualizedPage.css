@@ -54,15 +54,15 @@
   }
   
   .subtitle1 {
-    font-size: 25px;
+    font-size: 22px;
     padding-bottom: 12px;
-    color: #7e7e7e;
+    color: hsl(300, 8%, 57%);
   }
 
   .subtitle2 {
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic;
-    color: #929191;
+    color: hsl(300, 8%, 57%);
   }
 
   .input-container {
