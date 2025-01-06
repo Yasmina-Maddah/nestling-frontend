@@ -48,7 +48,7 @@ const Sidebar = () => {
           </div>
         </ul>
       </nav>
-      <div className="spacer" style={{ flexGrow: 1 }}></div> {/* Spacer for separation */}
+      <div className="spacer" style={{ flexGrow: 1 }}></div> 
       <div className="sidebar-footer">
         <button className="nav-button">
           <img src={arrowRightIcon} alt="Next" className="nav-icon" />

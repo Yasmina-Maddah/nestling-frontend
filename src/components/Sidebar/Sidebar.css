@@ -64,6 +64,6 @@
 }
 
 .sidebar-footer {
-  margin-top: auto; /* Push the footer to the bottom */
-  padding-top: 40px; /* Add extra space between the footer and the last icon */
+  margin-top: auto; 
+  padding-top: 40px; 
 }
