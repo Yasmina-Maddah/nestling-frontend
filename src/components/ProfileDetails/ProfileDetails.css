@@ -1,0 +1,34 @@
+.profile-details {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .intro-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .intro-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .intro-label {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
