@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProfileHeader.css";
+import ProfilePhoto from "../../assets/images/ProfilePhoto.png";
 
 const ProfileHeader = () => {
   return (
@@ -9,7 +10,7 @@ const ProfileHeader = () => {
       </div>
       <div className="profile-picture-container">
         <img
-          src="https://via.placeholder.com/150"
+          src={ProfilePhoto}
           alt="Child's Profile"
           className="profile-picture"
         />

@@ -6,8 +6,9 @@
   
   .cover-photo {
     height: 200px;
-    background: linear-gradient(to right, #84fab0, #8fd3f4);
+    background: linear-gradient(to right, #B0F1EE, #FFAFB0);
     position: relative;
+    border-radius: 20px;
   }
   
   .edit-cover-button {
