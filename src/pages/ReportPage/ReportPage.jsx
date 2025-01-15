@@ -9,12 +9,12 @@ const ChildProfilePage = () => {
       <Sidebar />
       <div className="child-profile-container">
         {/* Left Section */}
-        <div className="profile-card">
-          <img src={ProfileImage} alt="Child's Profile" className="profile-image" />
-          <div className="profile-details">
-            <p className="profile-name">Child's Name</p>
-            <p className="profile-age">Age</p>
-            <p className="profile-hobby">Favorite Hobby</p>
+        <div className="report-profile-card">
+          <img src={ProfileImage} alt="Child's Profile" className="report-profile-image" />
+          <div className="report-profile-details">
+            <p className="report-profile-name">Child's Name</p>
+            <p className="report-profile-age">Age</p>
+            <p className="report-profile-hobby">Favorite Hobby</p>
           </div>
         </div>
 

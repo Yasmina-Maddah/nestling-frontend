@@ -6,7 +6,7 @@
     background-color: #f8f8f8;
   }
   
-    .child-profile-container {
+.child-profile-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 20px;
@@ -14,7 +14,7 @@
     width: 100%;
   }
   
-  .profile-card {
+  .report-profile-card {
     background-color: #03989E; 
     border-radius: 15px;
     padding: 20px;
@@ -25,7 +25,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .profile-image {
+  .report-profile-image {
     width: 200px;
     height: 200px;
     border-radius: 50%; 
@@ -34,14 +34,14 @@
     border: 5px solid #ffffff; 
   }
 
-  .profile-details{
+  .report-profile-details{
     background-color: #03989E;
     color: #ffffff;
     justify-content: center;
     box-shadow: none;
   }
   
-  .profile-details p {
+  .report-profile-details p {
     text-align: center;    
     margin: 5px 0;
     font-size: 1.2rem;
