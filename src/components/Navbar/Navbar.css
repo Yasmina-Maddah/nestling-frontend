@@ -74,7 +74,6 @@
     background-color: #03989E;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .navbar-links {
       display: none; 
