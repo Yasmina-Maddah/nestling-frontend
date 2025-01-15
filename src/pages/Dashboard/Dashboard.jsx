@@ -22,6 +22,7 @@ const Dashboard = () => {
       id: 2,
       imageUrl: skillSuggestion,
       title: "Skill Suggestion",
+      onClick: () => navigate("/Skills"), 
     },
     {
       id: 3,
