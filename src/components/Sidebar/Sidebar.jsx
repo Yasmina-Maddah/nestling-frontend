@@ -50,7 +50,9 @@ const Sidebar = () => {
           </div>
           <div className="nav-section">
             <li>
-              <button className="nav-button">
+              <button className="nav-button"
+                onClick={() => navigate('/Skills')} 
+              >
                 <img src={resourceIcon} alt="Ideas" className="nav-icon" />
               </button>
             </li>
