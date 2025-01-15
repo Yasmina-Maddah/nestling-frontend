@@ -51,7 +51,10 @@ const Sidebar = () => {
               </button>
             </li>
             <li>
-              <button className="nav-button">
+              <button className="nav-button"
+                onClick={() => navigate('/Reports')} 
+
+              >
                 <img src={chartIcon} alt="Analytics" className="nav-icon" />
               </button>
             </li>
