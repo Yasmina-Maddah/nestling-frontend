@@ -4,17 +4,17 @@ import './Resources.css';
 const resources = [
   {
     title: 'EDRAAK',
-    link: '#', 
+    link: 'https://www.edraak.org/en/', 
     imageClass: 'resource-image-one', 
   },
   {
     title: 'Zero to Three',
-    link: '#',
+    link: 'https://www.zerotothree.org/',
     imageClass: 'resource-image-two',
   },
   {
     title: 'Urjouha',
-    link: '#',
+    link: 'https://www.urjouha.net/index-english',
     imageClass: 'resource-image-three',
   },
 ];
@@ -29,7 +29,7 @@ const Resources = () => {
             <div className={`resource-image ${resource.imageClass}`}></div>
             <h3 className="resource-title">{resource.title}</h3>
             <a href={resource.link} className="resource-link">
-              Explore
+              Learn more
             </a>
           </div>
         ))}
