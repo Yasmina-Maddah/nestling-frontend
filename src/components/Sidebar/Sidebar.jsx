@@ -9,6 +9,7 @@ import chartIcon from '../../assets/icons/Chart.png';
 import bookIcon from '../../assets/icons/Book.png';
 import resourceIcon from '../../assets/icons/Resource.png';
 import arrowRightIcon from '../../assets/icons/Arrow.png';
+import skillsIcon from '../../assets/icons/skills.png';
 
 const Sidebar = () => {
   const navigate = useNavigate(); 
@@ -36,8 +37,10 @@ const Sidebar = () => {
               </button>
             </li>
             <li>
-              <button className="nav-button">
-                <img src={chartIcon} alt="Analytics" className="nav-icon" />
+              <button className="nav-button"
+                onClick={() => navigate('/Skills')} 
+              >
+                <img src={skillsIcon} alt="skills" className="nav-icon" />
               </button>
             </li>
             <li>
@@ -47,11 +50,15 @@ const Sidebar = () => {
                 <img src={bookIcon} alt="Library" className="nav-icon" />
               </button>
             </li>
+            <li>
+              <button className="nav-button">
+                <img src={chartIcon} alt="Analytics" className="nav-icon" />
+              </button>
+            </li>
           </div>
           <div className="nav-section">
             <li>
               <button className="nav-button"
-                onClick={() => navigate('/Skills')} 
               >
                 <img src={resourceIcon} alt="Ideas" className="nav-icon" />
               </button>
