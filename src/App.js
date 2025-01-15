@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import AIStoryVisualizedPage from './pages/AIStoryVisualizedPage/AIStoryVisualizedPage';
 import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
+import SkillSuggestionPage from './pages/SkillSuggestionPage/SkillSuggestionPage';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/Profile" element={<ProfilePage />} />
       <Route path="/AIPage" element={<AIStoryVisualizedPage />} />
       <Route path="/Resources" element={<ResourcesPage />} />
+      <Route path="/Skills" element={<SkillSuggestionPage />} />
     </Routes>
   );
 };
