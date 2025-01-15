@@ -44,6 +44,7 @@ const Dashboard = () => {
       id: 6,
       imageUrl: trackSkills,
       title: "Track Skill Development",
+      onClick: () => navigate("/Reports"), 
     },
   ];
 
