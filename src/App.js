@@ -4,7 +4,6 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import AIStoryVisualizedPage from './pages/AIStoryVisualizedPage/AIStoryVisualizedPage';
-import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
 
 
 const App = () => {
@@ -14,7 +13,7 @@ const App = () => {
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/Profile" element={<ProfilePage />} />
       <Route path="/AIPage" element={<AIStoryVisualizedPage />} />
-      <Route path="/Resources" element={<ResourcesPage />} />
+
 
     </Routes>
   );

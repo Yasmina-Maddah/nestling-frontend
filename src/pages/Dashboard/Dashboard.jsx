@@ -18,7 +18,7 @@ const Dashboard = () => {
     {
       id: 2,
       imageUrl: skillSuggestion,
-      title: "Personalized Skill Suggestion",
+      title: "Skill Suggestion",
     },
     {
       id: 3,
