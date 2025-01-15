@@ -8,6 +8,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import AIStoryVisualizedPage from './pages/AIStoryVisualizedPage/AIStoryVisualizedPage';
 import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
 import SkillSuggestionPage from './pages/SkillSuggestionPage/SkillSuggestionPage';
+import ReportPage from './pages/ReportPage/ReportPage';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <Route path="/AIPage" element={<AIStoryVisualizedPage />} />
       <Route path="/Resources" element={<ResourcesPage />} />
       <Route path="/Skills" element={<SkillSuggestionPage />} />
+      <Route path="/Reports" element={<ReportPage />} />
     </Routes>
   );
 };
