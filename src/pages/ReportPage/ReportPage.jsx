@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar/Sidebar"; // Assuming Sidebar is already coded
 import "./ReportPage.css";
-import ProfileImage from "../../assets/images/CreateProfile.png"; // Replace with your actual image path
+import ProfileImage from "../../assets/images/ProfilePhoto.png"; // Replace with your actual image path
 
 const ChildProfilePage = () => {
   return (
