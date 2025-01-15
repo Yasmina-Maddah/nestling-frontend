@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Sidebar.css';
 
 import logo from '../../assets/logo/1.png';
@@ -10,6 +11,8 @@ import resourceIcon from '../../assets/icons/Resource.png';
 import arrowRightIcon from '../../assets/icons/Arrow.png';
 
 const Sidebar = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -19,12 +22,16 @@ const Sidebar = () => {
         <ul className="nav-list">
           <div className="nav-section">
             <li>
-              <button className="nav-button">
+              <button className="nav-button"
+                onClick={() => navigate('/Dashboard')} // Navigate to Dashboard
+              >
                 <img src={homeIcon} alt="Home" className="nav-icon" />
               </button>
             </li>
             <li>
-              <button className="nav-button">
+              <button className="nav-button"
+                onClick={() => navigate('/Profile')} // Navigate to Profile Page
+              >
                 <img src={userIcon} alt="Profile" className="nav-icon" />
               </button>
             </li>
@@ -34,7 +41,9 @@ const Sidebar = () => {
               </button>
             </li>
             <li>
-              <button className="nav-button">
+              <button className="nav-button"
+                onClick={() => navigate('/AIPage')} // Navigate to AI Page
+              >
                 <img src={bookIcon} alt="Library" className="nav-icon" />
               </button>
             </li>
@@ -50,7 +59,9 @@ const Sidebar = () => {
       </nav>
       <div className="spacer" style={{ flexGrow: 1 }}></div> 
       <div className="sidebar-footer">
-        <button className="nav-button">
+        <button className="nav-button"
+          onClick={() => navigate('/')} // Navigate to Landing Page
+        >
           <img src={arrowRightIcon} alt="Next" className="nav-icon" />
         </button>
       </div>
