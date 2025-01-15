@@ -1,13 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom'; 
 import '../LoginPage/Auth.css';
 import Logo from '../../assets/logo/2.png';
 
 const SignUp = () => {
-    const navigate = useNavigate(); // Initialize the navigation function
+    const navigate = useNavigate(); 
 
     const handleLoginNavigation = () => {
-        navigate('/Login'); // Navigate to the Login page
+        navigate('/Login'); 
     };
 
     return (
