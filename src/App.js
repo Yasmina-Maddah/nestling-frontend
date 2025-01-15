@@ -19,8 +19,6 @@ const App = () => {
       <Route path="/Profile" element={<ProfilePage />} />
       <Route path="/AIPage" element={<AIStoryVisualizedPage />} />
       <Route path="/Resources" element={<ResourcesPage />} />
-
-
     </Routes>
   );
 };
