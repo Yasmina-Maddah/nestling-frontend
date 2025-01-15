@@ -6,6 +6,7 @@ import HowItWorks from '../../components/HowItWorks/HowItWorks';
 import Resources from '../../components/Resources/Resources';
 import AboutUs from '../../components/AboutUs/AboutUs';
 import Footer from "../../components/Footer/Footer";
+import '../../App.css';
 
 const LandingPage = () => {
     return (
