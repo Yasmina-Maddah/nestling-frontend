@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import "./Dashboard.css";
 import createProfile from "../../assets/images/CreateProfile.png";
 import skillSuggestion from "../../assets/images/SkillDevelopement.png";
@@ -9,14 +9,14 @@ import exploreResources from "../../assets/images/Resouces.png";
 import trackSkills from "../../assets/images/TrackSkill.png";
 
 const Dashboard = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const cardData = [
     {
       id: 1,
       imageUrl: createProfile,
       title: "Create a Profile",
-      onClick: () => navigate("/Profile"), // Navigate to ProfilePage
+      onClick: () => navigate("/Profile"), 
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Dashboard = () => {
       id: 3,
       imageUrl: aiStory,
       title: "AI Story Visualization",
-      onClick: () => navigate("/AIPage"), // Navigate to AIStoryVisualizedPage
+      onClick: () => navigate("/AIPage"), 
     },
     {
       id: 4,
@@ -58,7 +58,7 @@ const Dashboard = () => {
             className={`dashboard-card ${
               card.isWide ? "dashboard-card-wide" : ""
             }`}
-            onClick={card.onClick} // Trigger navigation if onClick is defined
+            onClick={card.onClick} 
           >
             <img
               src={card.imageUrl}
