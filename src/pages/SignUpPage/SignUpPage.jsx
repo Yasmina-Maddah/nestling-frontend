@@ -1,5 +1,5 @@
 import React from 'react';
-import './Auth.css';
+import '../LoginPage/Auth.css';
 import Logo from '../../assets/logo/2.png';
 
 const SignUp = () => {
