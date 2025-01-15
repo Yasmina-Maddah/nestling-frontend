@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Dashboard.css";
 import createProfile from "../../assets/images/CreateProfile.png";
 import skillSuggestion from "../../assets/images/SkillDevelopement.png";
@@ -7,13 +8,15 @@ import progressTracking from "../../assets/images/ProgressTracking.png";
 import exploreResources from "../../assets/images/Resouces.png";
 import trackSkills from "../../assets/images/TrackSkill.png";
 
-
 const Dashboard = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const cardData = [
     {
       id: 1,
       imageUrl: createProfile,
       title: "Create a Profile",
+      onClick: () => navigate("/Profile"), // Navigate to ProfilePage
     },
     {
       id: 2,
@@ -24,6 +27,7 @@ const Dashboard = () => {
       id: 3,
       imageUrl: aiStory,
       title: "AI Story Visualization",
+      onClick: () => navigate("/AIPage"), // Navigate to AIStoryVisualizedPage
     },
     {
       id: 4,
@@ -48,12 +52,13 @@ const Dashboard = () => {
         <h1>Welcome, [Parent's Name]!</h1>
       </header>
       <div className="dashboard-card-grid">
-        {cardData.map((card, index) => (
+        {cardData.map((card) => (
           <div
             key={card.id}
             className={`dashboard-card ${
               card.isWide ? "dashboard-card-wide" : ""
             }`}
+            onClick={card.onClick} // Trigger navigation if onClick is defined
           >
             <img
               src={card.imageUrl}
