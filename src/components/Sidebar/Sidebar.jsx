@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './Sidebar.css';
 
 import logo from '../../assets/logo/1.png';
@@ -11,7 +11,7 @@ import resourceIcon from '../../assets/icons/Resource.png';
 import arrowRightIcon from '../../assets/icons/Arrow.png';
 
 const Sidebar = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   return (
     <aside className="sidebar">
@@ -23,14 +23,14 @@ const Sidebar = () => {
           <div className="nav-section">
             <li>
               <button className="nav-button"
-                onClick={() => navigate('/Dashboard')} // Navigate to Dashboard
+                onClick={() => navigate('/Dashboard')} 
               >
                 <img src={homeIcon} alt="Home" className="nav-icon" />
               </button>
             </li>
             <li>
               <button className="nav-button"
-                onClick={() => navigate('/Profile')} // Navigate to Profile Page
+                onClick={() => navigate('/Profile')} 
               >
                 <img src={userIcon} alt="Profile" className="nav-icon" />
               </button>
@@ -42,7 +42,7 @@ const Sidebar = () => {
             </li>
             <li>
               <button className="nav-button"
-                onClick={() => navigate('/AIPage')} // Navigate to AI Page
+                onClick={() => navigate('/AIPage')} 
               >
                 <img src={bookIcon} alt="Library" className="nav-icon" />
               </button>
@@ -60,7 +60,7 @@ const Sidebar = () => {
       <div className="spacer" style={{ flexGrow: 1 }}></div> 
       <div className="sidebar-footer">
         <button className="nav-button"
-          onClick={() => navigate('/')} // Navigate to Landing Page
+          onClick={() => navigate('/')} 
         >
           <img src={arrowRightIcon} alt="Next" className="nav-icon" />
         </button>
