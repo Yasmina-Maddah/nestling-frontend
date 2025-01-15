@@ -1,16 +1,11 @@
-/* Layout Container */
 .watch-me-grow-layout {
     margin-left: 20px;
     margin-right: 20px;
     display: flex;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     background-color: #f8f8f8;
 }
 
-/* Sidebar (Pre-existing Style) */
-
-
-/* Watch Me Grow Section */
 .watch-me-grow-container {
     flex-grow: 1;
     padding: 20px 40px;
@@ -22,7 +17,6 @@
     gap: 40px;
 }
 
-/* Section Title */
 .section-title {
     font-size: 2rem;
     font-weight: bold;
@@ -30,21 +24,19 @@
     margin-top: 20px;
 }
 
-/* Cards Grid */
 .skill-cards-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
     width: 100%;
-    max-width: 800px; /* Center and limit the grid width */
+    max-width: 800px; 
 }
 
-/* Individual Card */
 .skill-card {
     display: flex;
     width: 400px;
     height: 260;
-    flex-direction: column; /* Keep the overall vertical layout */
+    flex-direction: column; 
     gap: 10px;
     background-color: #fdf1f7;
     border-radius: 15px;
@@ -55,32 +47,28 @@
 
 .skill-card-header {
     display: flex;
-    align-items: center; /* Vertically align the icon and title */
-    gap: 10px; /* Space between the icon and title */
+    align-items: center; 
+    gap: 10px; 
 }
 
-/* Card Hover Effect */
 .skill-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Card Icon */
-.card-icon {
+.skill-card-icon {
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
 
-/* Title */
-.card-title {
+.skill-card-title {
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
     margin: 0;
 }
 
-/* Card Description */
 .skill-card-description {
     font-size: 1rem;
     color: #555;
