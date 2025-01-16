@@ -12,8 +12,8 @@ const AIStoryVisualizedPage = ({ childId }) => {
 
   const handleGenerateStory = async () => {
     try {
-      const response = await API.post(`/child/${childId}/ai-visualization`, {
-        skill_id: 1, // Example skill ID (You can dynamically fetch based on context)
+      const response = await API.post(`/child/2/ai-visualization`, {
+        skill_id: 2, // Example skill ID (You can dynamically fetch based on context)
         theme,
         prompt,
       });

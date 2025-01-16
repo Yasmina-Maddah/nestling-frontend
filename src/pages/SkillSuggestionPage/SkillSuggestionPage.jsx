@@ -44,7 +44,7 @@ const SkillSuggestionPage = ({ childId }) => {
 
   const handleSkillSelect = async (skillId) => {
     try {
-      await API.post(`/child/${childId}/skill/select`, { skill_id: skillId });
+      await API.post(`/child/2/skill/select`, { skill_id: skillId });
       alert("Skill selected successfully!");
       navigate("/AIPage");
     } catch (error) {
