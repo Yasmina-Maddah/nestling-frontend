@@ -1,7 +1,7 @@
 import React from 'react';
 import './SkillSuggestionPage.css';
-import Sidebar from '../../components/Sidebar/Sidebar'; // Assuming Sidebar is already coded
-import PuzzleIcon from '../../assets/icons/problem-solving.png'; // Replace with your actual icon path
+import Sidebar from '../../components/Sidebar/Sidebar'; 
+import PuzzleIcon from '../../assets/icons/problem-solving.png'; 
 import WonderIcon from '../../assets/icons/knowledge.png';
 import CreateIcon from '../../assets/icons/creativity.png';
 import ListenIcon from '../../assets/icons/communication.png';
