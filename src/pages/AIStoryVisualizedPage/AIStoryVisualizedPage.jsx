@@ -1,33 +1,76 @@
-import React, { useState } from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import API from "../../api"; // Your API client
-import "./AIStoryVisualizedPage.css";
-import Logo from "../../assets/logo/1.png";
-import SubmitIcon from "../../assets/icons/Submit.png";
+import React, { useState } from 'react';
+import axios from 'axios';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import './AIStoryVisualizedPage.css';
+import Logo from '../../assets/logo/1.png';
+import SubmitIcon from '../../assets/icons/Submit.png';
+import { toast } from 'react-toastify'; // Ensure react-toastify is installed and imported
 
-const AIStoryVisualizedPage = ({ childId }) => {
-  const [theme, setTheme] = useState("");
-  const [prompt, setPrompt] = useState("");
-  const [error, setError] = useState("");
+const AIStoryVisualizedPage = ({ script, setScript }) => {
+  const [prompt, setPrompt] = useState('');
+  const [response, setResponse] = useState('');
+  const [clicked, setClicked] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
-  const handleGenerateStory = async () => {
-    try {
-      const response = await API.post(`/child/2/ai-visualization`, {
-        skill_id: 2, // Example skill ID (You can dynamically fetch based on context)
-        theme,
-        prompt,
-      });
-      console.log("Generated Visualization:", response.data);
-      alert("Story generated successfully!");
-    } catch (err) {
-      console.error("Failed to generate story:", err);
-      setError("Failed to generate story. Please try again.");
+  const handleInputChange = (e) => {
+    setPrompt(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!prompt.trim()) {
+      toast.error("Please enter a valid prompt.");
+      return;
     }
+
+    setLoading(true);
+    setResponse('');
+    const selectedAction = "Visualize stories"; // Assuming this is the default action
+    toast.info("Generating 🌠");
+
+    const systemMessage =
+      selectedAction === "Visualizes stories"
+        ? "Visualize answers into storytellings, and always accept just knowledge, problem-solving, creative and communication skills."
+        : "Visualize answers into storytellings, and always accept just knowledge, problem-solving, creative and communication skills.";
+
+    const userMessage = `\n${prompt}`;
+    axios
+      .post(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          model: "gpt-4",
+          messages: [
+            { role: "system", content: systemMessage },
+            { role: "user", content: userMessage },
+          ],
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      )
+      .then((res) => {
+        setResponse(res.data.choices[0].message.content);
+        toast.success("Story generated successfully!");
+        setLoading(false);
+      })
+      .catch((err) => {
+        toast.error("Something went wrong 🫠");
+        console.error(err);
+        setLoading(false);
+      });
+
+    setClicked(!clicked);
   };
 
   return (
     <div className="ai-story-page">
       <Sidebar />
+
       <main className="main-content">
         <div className="background-section">
           <h1 className="title">"Create Your Customized Stories: Your AI Visualization Companion"</h1>
@@ -44,24 +87,24 @@ const AIStoryVisualizedPage = ({ childId }) => {
           <div className="input-container">
             <input
               type="text"
-              value={theme}
-              onChange={(e) => setTheme(e.target.value)}
-              className="story-input"
-              placeholder="Enter Theme"
-            />
-            <input
-              type="text"
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
               className="story-input"
               placeholder="Craft your story"
+              value={prompt}
+              onChange={handleInputChange}
+              disabled={loading}
             />
-            <button className="icon-button" onClick={handleGenerateStory}>
-              <img src={SubmitIcon} alt="Submit" className="icon" />
+            <button className="icon-button" onClick={handleSubmit} disabled={loading}>
+              {loading ? "Loading..." : <img src={SubmitIcon} alt="Submit" className="icon" />}
             </button>
           </div>
-          {error && <p className="error-message">{error}</p>}
         </div>
+
+        {response && (
+          <div className="response-section">
+            <h2>Your Story:</h2>
+            <p>{response}</p>
+          </div>
+        )}
       </main>
     </div>
   );
