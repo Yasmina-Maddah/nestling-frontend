@@ -13,28 +13,28 @@ const cards = [
     id: 1,
     icon: PuzzleIcon,
     title: "Puzzle and Solve",
-    description: "I enjoy discovering how things work...",
+    description: "I enjoy discovering how things work and finding solutions when something doesn’t go as planned. Whether it’s fixing a broken toy, solving a tricky puzzle, or coming up with a new way to do something, I love the challenge of thinking through problems and figuring them out.",
     skillId: 1, // Assign corresponding skill ID
   },
   {
     id: 2,
     icon: WonderIcon,
     title: "Wonder and Learn",
-    description: "I love imagining new ideas...",
+    description: "I love imagining new ideas and turning them into something real. Whether it’s drawing, building, writing stories, or making up games, I enjoy expressing myself in fun and different ways. It’s exciting to see what I can create when I let my imagination lead the way.",
     skillId: 2, // Assign corresponding skill ID
   },
   {
     id: 3,
     icon: CreateIcon,
     title: "Create and Explore",
-    description: "I’m always curious about how things work...",
+    description: "I’m always curious about how things work and why they happen. I love reading, asking questions, and exploring new topics. Learning new things makes me feel excited, and I enjoy sharing what I’ve learned with others too.",
     skillId: 3, // Assign corresponding skill ID
   },
   {
     id: 4,
     icon: ListenIcon,
     title: "Listen and Express",
-    description: "I enjoy talking to people...",
+    description: "I enjoy talking to people and sharing my ideas, whether it’s telling a story, asking questions, or working with friends on a project. I like listening to others, learning from them, and finding ways to work together to make things even better.",
     skillId: 4, // Assign corresponding skill ID
   },
 ];
