@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './Sidebar.css';
 
@@ -12,7 +12,13 @@ import arrowRightIcon from '../../assets/icons/Arrow.png';
 import skillsIcon from '../../assets/icons/skills.png';
 
 const Sidebar = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const [activeLink, setActiveLink] = useState(''); // State to track the active link
+
+  const handleNavClick = (path, linkName) => {
+    setActiveLink(linkName); // Update the active link
+    navigate(path); // Navigate to the desired route
+  };
 
   return (
     <aside className="sidebar">
@@ -23,37 +29,41 @@ const Sidebar = () => {
         <ul className="nav-list">
           <div className="nav-section">
             <li>
-              <button className="nav-button"
-                onClick={() => navigate('/Dashboard')} 
+              <button
+                className={`nav-button ${activeLink === 'Dashboard' ? 'active' : ''}`}
+                onClick={() => handleNavClick('/Dashboard', 'Dashboard')}
               >
                 <img src={homeIcon} alt="Home" className="nav-icon" />
               </button>
             </li>
             <li>
-              <button className="nav-button"
-                onClick={() => navigate('/Profile')} 
+              <button
+                className={`nav-button ${activeLink === 'Profile' ? 'active' : ''}`}
+                onClick={() => handleNavClick('/Profile', 'Profile')}
               >
                 <img src={userIcon} alt="Profile" className="nav-icon" />
               </button>
             </li>
             <li>
-              <button className="nav-button"
-                onClick={() => navigate('/Skills')} 
+              <button
+                className={`nav-button ${activeLink === 'Skills' ? 'active' : ''}`}
+                onClick={() => handleNavClick('/Skills', 'Skills')}
               >
-                <img src={skillsIcon} alt="skills" className="nav-icon" />
+                <img src={skillsIcon} alt="Skills" className="nav-icon" />
               </button>
             </li>
             <li>
-              <button className="nav-button"
-                onClick={() => navigate('/AIPage')} 
+              <button
+                className={`nav-button ${activeLink === 'AIPage' ? 'active' : ''}`}
+                onClick={() => handleNavClick('/AIPage', 'AIPage')}
               >
                 <img src={bookIcon} alt="Library" className="nav-icon" />
               </button>
             </li>
             <li>
-              <button className="nav-button"
-                onClick={() => navigate('/Reports')} 
-
+              <button
+                className={`nav-button ${activeLink === 'Reports' ? 'active' : ''}`}
+                onClick={() => handleNavClick('/Reports', 'Reports')}
               >
                 <img src={chartIcon} alt="Analytics" className="nav-icon" />
               </button>
@@ -61,7 +71,9 @@ const Sidebar = () => {
           </div>
           <div className="nav-section">
             <li>
-              <button className="nav-button"
+              <button
+                className={`nav-button ${activeLink === 'Resources' ? 'active' : ''}`}
+                onClick={() => handleNavClick('/Resources', 'Resources')}
               >
                 <img src={resourceIcon} alt="Ideas" className="nav-icon" />
               </button>
@@ -69,10 +81,11 @@ const Sidebar = () => {
           </div>
         </ul>
       </nav>
-      <div className="spacer" style={{ flexGrow: 1 }}></div> 
+      <div className="spacer" style={{ flexGrow: 1 }}></div>
       <div className="sidebar-footer">
-        <button className="nav-button"
-          onClick={() => navigate('/')} 
+        <button
+          className={`nav-button ${activeLink === 'Logout' ? 'active' : ''}`}
+          onClick={() => handleNavClick('/', 'Logout')}
         >
           <img src={arrowRightIcon} alt="Next" className="nav-icon" />
         </button>
