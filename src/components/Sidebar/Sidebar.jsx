@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 
 import logo from '../../assets/logo/1.png';
@@ -13,11 +13,11 @@ import skillsIcon from '../../assets/icons/skills.png';
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [activeLink, setActiveLink] = useState(''); // State to track the active link
+  const [activeLink, setActiveLink] = useState('Dashboard'); // Default active link
 
   const handleNavClick = (path, linkName) => {
-    setActiveLink(linkName); // Update the active link
-    navigate(path); // Navigate to the desired route
+    setActiveLink(linkName); // Set the active link
+    navigate(path); // Navigate to the route
   };
 
   return (

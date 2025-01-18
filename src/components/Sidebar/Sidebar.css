@@ -58,6 +58,11 @@
   transform: scale(1.1);
 }
 
+.nav-button.active {
+  background-color: #03989E; /* Active background color */
+  transform: scale(1.1); /* Slightly enlarge the active button */
+}
+
 .nav-icon {
   font-size: 24px;
   color: #333;
