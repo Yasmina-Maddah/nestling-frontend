@@ -88,9 +88,11 @@ const ProfileDetails = ({ setChildId }) => {
           />
         </li>
       </ul>
-      <button onClick={handleSave} className="save-button">
-        Save
-      </button>
+      <div className="button-container">
+        <button onClick={handleSave} className="save-button">
+          Save
+        </button>
+      </div>
     </section>
   );
 };

@@ -1,40 +1,55 @@
 .profile-details {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    height: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .details-heading {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .intro-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .intro-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .intro-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  .intro-input {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 8px;
-    flex-grow: 1;
-    font-size: 14px;
-  }
-  
-  
+  margin: 20px;
+}
+
+.details-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.intro-list {
+  background-color: white;
+  list-style-type: none;
+  padding: 0;
+}
+
+.intro-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.intro-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.intro-item input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Move the button to the extreme right */
+  margin-top: 20px; /* Add some spacing from the input fields */
+}
+
+.save-button {
+  background-color: #03989E;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #ffff;
+  color: #03989E;
+}
