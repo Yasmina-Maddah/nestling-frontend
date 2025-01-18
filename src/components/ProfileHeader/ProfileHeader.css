@@ -18,12 +18,17 @@
   bottom: 10px;
   right: 10px;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #03989E;
   color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.edit-cover-button:hover{
+  background-color: #ffff;
+  color: #03989E;
 }
 
 .profile-picture-container {
