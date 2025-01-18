@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import API from "../../api";
 import "./ProfileDetails.css";
 
+// Import your icons
+import NameIcon from "../../assets/icons/name.png";
+import BirthDateIcon from "../../assets/icons/BirthDate.png";
+import HobbiesIcon from "../../assets/icons/Hobbies.png";
+import DreamCareerIcon from "../../assets/icons/DreamJob.png";
+
 const ProfileDetails = ({ setChildId }) => {
   const [details, setDetails] = useState({
     name: "",
@@ -31,14 +37,13 @@ const ProfileDetails = ({ setChildId }) => {
     }
   };
 
-  
-
   return (
     <section className="profile-details">
       <h2 className="details-heading">Customize your intro</h2>
       <ul className="intro-list">
-        <li>
-          <label>Name</label>
+        {/* Name Field */}
+        <li className="intro-item">
+          <img src={NameIcon} alt="Name" className="intro-icon" />
           <input
             type="text"
             name="name"
@@ -47,8 +52,10 @@ const ProfileDetails = ({ setChildId }) => {
             onChange={handleChange}
           />
         </li>
-        <li>
-          <label>Date of Birth</label>
+
+        {/* Date of Birth Field */}
+        <li className="intro-item">
+          <img src={BirthDateIcon} alt="Date of Birth" className="intro-icon" />
           <input
             type="date"
             name="dateOfBirth"
@@ -56,8 +63,10 @@ const ProfileDetails = ({ setChildId }) => {
             onChange={handleChange}
           />
         </li>
-        <li>
-          <label>Hobbies</label>
+
+        {/* Hobbies Field */}
+        <li className="intro-item">
+          <img src={HobbiesIcon} alt="Hobbies" className="intro-icon" />
           <input
             type="text"
             name="hobbies"
@@ -66,8 +75,10 @@ const ProfileDetails = ({ setChildId }) => {
             onChange={handleChange}
           />
         </li>
-        <li>
-          <label>Dream Career</label>
+
+        {/* Dream Career Field */}
+        <li className="intro-item">
+          <img src={DreamCareerIcon} alt="Dream Career" className="intro-icon" />
           <input
             type="text"
             name="dreamCareer"
