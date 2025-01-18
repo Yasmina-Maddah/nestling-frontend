@@ -35,6 +35,10 @@
   .navbar-links li a:hover {
     color: #03989E; 
   }
+
+  .navbar-links a.active {
+    color: #03989E; /* Active text color */
+}
   
   .navbar-buttons {
     display: flex;
