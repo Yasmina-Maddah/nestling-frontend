@@ -1,26 +1,46 @@
-import React from 'react';
-import './Footer.css';
-import Icon from "../../assets/icons/InstagramIcon.png";
+import React from "react";
+import "./Footer.css";
+import InstagramIcon from "../../assets/icons/InstagramIcon.png";
+import FacebookIcon from "../../assets/icons/facebook.png";
+import Logo from "../../assets/logo/1.png";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <p className="footer-text">
-          Stay updated by following us on Instagram
-        </p>
-        <a
-          href="https://instagram.com" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="footer-instagram-link"
-        >
-          <img
-            src={Icon} 
-            alt="Instagram"
-            className="footer-instagram-icon"
-          />
-        </a>
+        {/* Logo Section */}
+        <div className="footer-logo-section">
+          <img src={Logo} alt="Nestling Logo" className="footer-logo" />
+        </div>
+
+        {/* Social Media Section */}
+        <div className="footer-social-section">
+          <p className="footer-text">Stay connected with us:</p>
+          <div className="footer-social-icons">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              <img src={InstagramIcon} alt="Instagram" className="footer-icon" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              <img src={FacebookIcon} alt="Facebook" className="footer-icon" />
+            </a>
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="footer-contact-section">
+          <p className="footer-text">Contact us:</p>
+          <p className="footer-email">maddahyasmina@gmail.com</p>
+        </div>
       </div>
     </footer>
   );
