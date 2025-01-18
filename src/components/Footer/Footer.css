@@ -1,35 +1,65 @@
 .footer {
-    background-color: #03989E; 
-    padding: 1rem 30px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .footer-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem; 
-  }
-  
-  
-  .footer-text {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .footer-instagram-link {
-    display: inline-block;
-  }
-  
-  .footer-instagram-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-  
-  .footer-instagram-icon:hover {
-    transform: scale(1.1); 
-  }
+  background-color: #03989E; /* Light background */
+  color: #ffff; /* Dark text */
+  padding: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo {
+  width: 100px;
+}
+
+.footer-social-section {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+.footer-contact-section {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.footer-email {
+  font-size: 14px;
+  color: #007bff; /* Link-like color */
+}
