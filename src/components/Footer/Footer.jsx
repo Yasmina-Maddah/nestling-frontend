@@ -42,6 +42,9 @@ const Footer = () => {
           <p className="footer-email">maddahyasmina@gmail.com</p>
         </div>
       </div>
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Nestling. All rights reserved.</p>
+      </div>
     </footer>
   );
 };
