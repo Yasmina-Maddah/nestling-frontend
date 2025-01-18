@@ -99,7 +99,6 @@ const ProfileHeader = ({ childId }) => {
           <img src={EditIcon} alt="Edit Profile" />
         </button>
       </div>
-      <h1 className="profile-name">Child's Name</h1>
     </header>
   );
 };
