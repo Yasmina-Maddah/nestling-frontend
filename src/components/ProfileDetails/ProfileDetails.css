@@ -1,0 +1,40 @@
+.profile-details {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-heading {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .intro-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .intro-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .intro-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .intro-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    flex-grow: 1;
+    font-size: 14px;
+  }
+  
+  
