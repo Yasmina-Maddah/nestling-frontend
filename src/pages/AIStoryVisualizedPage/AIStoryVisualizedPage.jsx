@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import './AIStoryVisualizedPage.css';
-import Logo from '../../assets/logo/1.png';
-import SubmitIcon from '../../assets/icons/Submit.png';
-import { toast } from 'react-toastify'; // Ensure react-toastify is installed and imported
+import React, { useState } from "react";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import "./AIStoryVisualizedPage.css";
+import Logo from "../../assets/logo/1.png";
+import SubmitIcon from "../../assets/icons/Submit.png";
+import { toast } from "react-toastify";
+import API from "../../api";
 
-const AIStoryVisualizedPage = ({ script, setScript }) => {
+const AIStoryVisualizedPage = ({ childId }) => {
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState('');
-  const [clicked, setClicked] = useState(false);
   const [loading, setLoading] = useState(false);
-  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
   const handleInputChange = (e) => {
     setPrompt(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!prompt.trim()) {
@@ -27,44 +25,20 @@ const AIStoryVisualizedPage = ({ script, setScript }) => {
 
     setLoading(true);
     setResponse('');
-    const selectedAction = "Visualize stories"; // Assuming this is the default action
-    toast.info("Generating 🌠");
 
-    const systemMessage =
-      selectedAction === "Visualizes stories"
-        ? "Visualize answers into storytellings, and always accept just knowledge, problem-solving, creative and communication skills."
-        : "Visualize answers into storytellings, and always accept just knowledge, problem-solving, creative and communication skills.";
-
-    const userMessage = `\n${prompt}`;
-    axios
-      .post(
-        "https://api.openai.com/v1/chat/completions",
-        {
-          model: "gpt-4",
-          messages: [
-            { role: "system", content: systemMessage },
-            { role: "user", content: userMessage },
-          ],
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      )
-      .then((res) => {
-        setResponse(res.data.choices[0].message.content);
-        toast.success("Story generated successfully!");
-        setLoading(false);
-      })
-      .catch((err) => {
-        toast.error("Something went wrong 🫠");
-        console.error(err);
-        setLoading(false);
+    try {
+      const res = await API.post(`/child/${childId}/generate-story`, {
+        prompt: prompt,
       });
 
-    setClicked(!clicked);
+      setResponse(res.data.story_and_challenges); // Assuming the API returns story_and_challenges
+      toast.success("Story generated successfully!");
+    } catch (error) {
+      toast.error("Something went wrong while generating the story.");
+      console.error("Error generating story:", error.response?.data || error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
