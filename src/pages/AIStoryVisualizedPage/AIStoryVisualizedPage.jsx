@@ -17,21 +17,19 @@ const AIStoryVisualizedPage = ({ childId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!prompt.trim()) {
       toast.error("Please enter a valid prompt.");
       return;
     }
-
+  
     setLoading(true);
     setResponse('');
-
+  
     try {
-      const res = await API.post(`/child/${childId}/generate-story`, {
-        prompt: prompt,
-      });
-
-      setResponse(res.data.story_and_challenges); // Assuming the API returns story_and_challenges
+      const res = await API.post(`/child/${childId}/generate-story`, { prompt });
+      const { story, challenges } = res.data.ai_visualization;
+      setResponse(`${story}\n\nChallenges:\n- ${challenges.join('\n- ')}`);
       toast.success("Story generated successfully!");
     } catch (error) {
       toast.error("Something went wrong while generating the story.");
@@ -40,6 +38,7 @@ const AIStoryVisualizedPage = ({ childId }) => {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="ai-story-page">
