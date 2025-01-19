@@ -43,18 +43,20 @@ const SkillSuggestionPage = ({ childId }) => {
   const navigate = useNavigate();
 
   const handleSkillSelect = async (skillId) => {
+    if (!childId) {
+      alert("Child profile is not selected or created.");
+      return;
+    }
+
     try {
-      const response = await API.post(`/child/${childId}/skill/select`, { skill_id: skillId });
-      console.log("Skill Selection Response:", response.data);
+      await API.post(`/child/${childId}/skill/select`, { skill_id: skillId }); // Removed unused response
       alert("Skill selected successfully!");
-      navigate("/AIPage");
+      navigate("/AIPage"); // Redirect to AIPage
     } catch (error) {
       console.error("Error selecting skill:", error.response?.data || error.message);
-      alert("Failed to select skill.");
+      alert("Failed to select skill. Please try again.");
     }
   };
-  
-  
 
   return (
     <div className="watch-me-grow-layout">
