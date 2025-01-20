@@ -9,6 +9,9 @@ import AIStoryVisualizedPage from './pages/AIStoryVisualizedPage/AIStoryVisualiz
 import ResourcesPage from './pages/ResourcesPage/ResourcesPage';
 import SkillSuggestionPage from './pages/SkillSuggestionPage/SkillSuggestionPage';
 import ReportPage from './pages/ReportPage/ReportPage';
+import ArticlesList from './components/Articles/ArticlesList';
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
+
 
 
 const App = () => {
@@ -23,6 +26,10 @@ const App = () => {
       <Route path="/Resources" element={<ResourcesPage />} />
       <Route path="/Skills" element={<SkillSuggestionPage />} />
       <Route path="/Reports" element={<ReportPage />} />
+      <Route path="/Articles" element={<ArticlesList />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+
+
     </Routes>
   );
 };
