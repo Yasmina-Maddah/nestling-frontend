@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from '../api/axios';
+import API from "../../api";
 import Sidebar from '../Sidebar/Sidebar';
 import './ArticlesList.css'; // CSS specific to the articles list
 
@@ -13,7 +13,7 @@ const ArticlesList = () => {
 
     const fetchArticles = async () => {
         try {
-            const response = await axios.get(`/articles`, { params: { query: search } });
+            const response = await API.get(`/articles`, { params: { query: search } });
             setArticles(response.data.data); // Assuming paginated response
         } catch (error) {
             console.error(error);
