@@ -10,8 +10,9 @@ const ProfilePage = () => {
   const navigate = useNavigate();
 
   const handleChildCreated = (id) => {
-    setChildId(id); // Save the created child ID
-    navigate("/skills", { state: { childId: id } }); // Pass childId to SkillSuggestionPage
+    setChildId(id);
+    localStorage.setItem("childId", id); // Store childId in localStorage
+    navigate("/skills", { state: { childId: id } });
   };
 
   return (

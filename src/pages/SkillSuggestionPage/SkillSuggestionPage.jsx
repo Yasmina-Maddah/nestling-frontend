@@ -5,12 +5,18 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import "./SkillSuggestionPage.css";
 
 const SkillSuggestionPage = () => {
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState([]); // Initialize state for skills
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Retrieve childId from the navigation state
-  const childId = location.state?.childId;
+  const childId = location.state?.childId || localStorage.getItem("childId");
+
+  useEffect(() => {
+    if (!childId) {
+      alert("Child profile is not selected or created.");
+      navigate("/profile"); // Redirect back to profile creation
+    }
+  }, [childId, navigate]);
 
   useEffect(() => {
     const fetchSkills = async () => {
@@ -31,6 +37,8 @@ const SkillSuggestionPage = () => {
       alert("Child profile is not selected or created.");
       return;
     }
+    console.log("Child Profile ID:", childId);
+
 
     try {
       await API.post(`/assign-skill`, {
