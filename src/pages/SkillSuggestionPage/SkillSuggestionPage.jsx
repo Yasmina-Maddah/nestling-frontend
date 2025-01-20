@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import API from "../../api"; // Your API client
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./SkillSuggestionPage.css";
+import Brain from "../../assets/icons/knowledge.png";
 
 const SkillSuggestionPage = () => {
   const [skills, setSkills] = useState([]); // State to store fetched skills
@@ -75,7 +76,7 @@ useEffect(() => {
             >
               <div className="skill-card-header">
                 <img
-                  src={skill.icon || "default-icon.png"} // Default icon fallback
+                  src={skill.icon || Brain} // Default icon fallback
                   alt={skill.skill_name}
                   className="skill-card-icon"
                 />
