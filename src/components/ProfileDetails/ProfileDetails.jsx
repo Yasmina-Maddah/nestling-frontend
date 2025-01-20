@@ -8,7 +8,7 @@ import BirthDateIcon from "../../assets/icons/BirthDate.png";
 import HobbiesIcon from "../../assets/icons/Hobbies.png";
 import DreamCareerIcon from "../../assets/icons/DreamJob.png";
 
-const ProfileDetails = ({ setChildId }) => {
+const ProfileDetails = ({ onChildCreated }) => {
   const [details, setDetails] = useState({
     name: "",
     dateOfBirth: "",
@@ -23,7 +23,6 @@ const ProfileDetails = ({ setChildId }) => {
 
   const handleSave = async () => {
     try {
-      // Call API to create a profile
       const response = await API.post("/profiles", {
         name: details.name,
         date_of_birth: details.dateOfBirth,
@@ -31,9 +30,9 @@ const ProfileDetails = ({ setChildId }) => {
         dream_job: details.dreamCareer,
       });
 
-      // Set the child ID from the response
-      setChildId(response.data.id);
+      const childId = response.data.id;
       alert("Child profile created successfully!");
+      onChildCreated(childId); // Notify parent with the child ID
     } catch (error) {
       console.error("Error creating child profile:", error.response?.data || error.message);
       alert("Failed to create child profile.");

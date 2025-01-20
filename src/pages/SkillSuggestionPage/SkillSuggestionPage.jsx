@@ -1,46 +1,30 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import API from "../../api"; // Your API client
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./SkillSuggestionPage.css";
-import PuzzleIcon from "../../assets/icons/problem-solving.png";
-import WonderIcon from "../../assets/icons/knowledge.png";
-import CreateIcon from "../../assets/icons/creativity.png";
-import ListenIcon from "../../assets/icons/communication.png";
 
-const cards = [
-  {
-    id: 1,
-    icon: PuzzleIcon,
-    title: "Puzzle and Solve",
-    description: "I enjoy discovering how things work and finding solutions when something doesn’t go as planned. Whether it’s fixing a broken toy, solving a tricky puzzle, or coming up with a new way to do something, I love the challenge of thinking through problems and figuring them out.",
-    skillId: 1,
-  },
-  {
-    id: 2,
-    icon: WonderIcon,
-    title: "Wonder and Learn",
-    description: "I love imagining new ideas and turning them into something real. Whether it’s drawing, building, writing stories, or making up games, I enjoy expressing myself in fun and different ways. It’s exciting to see what I can create when I let my imagination lead the way.",
-    skillId: 2,
-  },
-  {
-    id: 3,
-    icon: CreateIcon,
-    title: "Create and Explore",
-    description: "I’m always curious about how things work and why they happen. I love reading, asking questions, and exploring new topics. Learning new things makes me feel excited, and I enjoy sharing what I’ve learned with others too.",
-    skillId: 3,
-  },
-  {
-    id: 4,
-    icon: ListenIcon,
-    title: "Listen and Express",
-    description: "I enjoy talking to people and sharing my ideas, whether it’s telling a story, asking questions, or working with friends on a project. I like listening to others, learning from them, and finding ways to work together to make things even better.",
-    skillId: 4,
-  },
-];
-
-const SkillSuggestionPage = ({ childId }) => {
+const SkillSuggestionPage = () => {
+  const [skills, setSkills] = useState([]);
+  const location = useLocation();
   const navigate = useNavigate();
+
+  // Retrieve childId from the navigation state
+  const childId = location.state?.childId;
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const response = await API.get("/skills");
+        setSkills(response.data.skills);
+      } catch (error) {
+        console.error("Error fetching skills:", error.response?.data || error.message);
+        alert("Failed to load skills. Please try again.");
+      }
+    };
+
+    fetchSkills();
+  }, []);
 
   const handleSkillSelect = async (skillId) => {
     if (!childId) {
@@ -49,9 +33,12 @@ const SkillSuggestionPage = ({ childId }) => {
     }
 
     try {
-      await API.post(`/child/${childId}/skill/select`, { skill_id: skillId }); // Removed unused response
+      await API.post(`/assign-skill`, {
+        child_profile_id: childId,
+        skill_id: skillId,
+      });
       alert("Skill selected successfully!");
-      navigate("/AIPage"); // Redirect to AIPage
+      navigate("/AIPage", { state: { childId, skillId } });
     } catch (error) {
       console.error("Error selecting skill:", error.response?.data || error.message);
       alert("Failed to select skill. Please try again.");
@@ -64,17 +51,21 @@ const SkillSuggestionPage = ({ childId }) => {
       <div className="watch-me-grow-container">
         <h1 className="skill-section-title">Watch me grow!</h1>
         <div className="skill-cards-container">
-          {cards.map((card) => (
+          {skills.map((skill) => (
             <div
-              key={card.id}
+              key={skill.id}
               className="skill-card"
-              onClick={() => handleSkillSelect(card.skillId)}
+              onClick={() => handleSkillSelect(skill.id)}
             >
               <div className="skill-card-header">
-                <img src={card.icon} alt={card.title} className="skill-card-icon" />
-                <h3 className="skill-card-title">{card.title}</h3>
+                <img
+                  src={skill.icon || "default-icon.png"}
+                  alt={skill.skill_name}
+                  className="skill-card-icon"
+                />
+                <h3 className="skill-card-title">{skill.skill_name}</h3>
               </div>
-              <p className="skill-card-description">{card.description}</p>
+              <p className="skill-card-description">{skill.description}</p>
             </div>
           ))}
         </div>
