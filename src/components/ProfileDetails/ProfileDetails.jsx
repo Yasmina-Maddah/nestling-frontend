@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import API from "../../api";
 import "./ProfileDetails.css";
 
-// Import your icons
 import NameIcon from "../../assets/icons/name.png";
 import BirthDateIcon from "../../assets/icons/BirthDate.png";
 import HobbiesIcon from "../../assets/icons/Hobbies.png";
@@ -16,7 +15,6 @@ const ProfileDetails = ({ onChildCreated }) => {
     dreamCareer: "",
   });
 
-  // Define the handleChange function
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDetails((prevDetails) => ({
@@ -34,15 +32,14 @@ const ProfileDetails = ({ onChildCreated }) => {
         dream_job: details.dreamCareer,
       });
   
-      console.log("API Response:", response.data); // Debugging backend response
+      console.log("API Response:", response.data); 
   
-      // Extract childId from the nested 'profile' object
       const childId = response.data.profile.id; 
-      localStorage.setItem("childId", childId); // Save the childId to localStorage
-      console.log("Saved Child ID to Local Storage:", childId); // Debugging
+      localStorage.setItem("childId", childId); 
+      console.log("Saved Child ID to Local Storage:", childId); 
   
       alert("Child profile created successfully!");
-      onChildCreated(childId); // Notify the parent component with the child ID
+      onChildCreated(childId); 
     } catch (error) {
       console.error("Error creating child profile:", error.response?.data || error.message);
       alert("Failed to create child profile.");
@@ -61,7 +58,7 @@ const ProfileDetails = ({ onChildCreated }) => {
             name="name"
             value={details.name}
             placeholder="Child's Name"
-            onChange={handleChange} // Call handleChange
+            onChange={handleChange} 
           />
         </li>
 
@@ -72,7 +69,7 @@ const ProfileDetails = ({ onChildCreated }) => {
             type="date"
             name="dateOfBirth"
             value={details.dateOfBirth}
-            onChange={handleChange} // Call handleChange
+            onChange={handleChange} 
           />
         </li>
 
@@ -84,7 +81,7 @@ const ProfileDetails = ({ onChildCreated }) => {
             name="hobbies"
             value={details.hobbies}
             placeholder="Favorite Hobbies"
-            onChange={handleChange} // Call handleChange
+            onChange={handleChange} 
           />
         </li>
 
@@ -96,7 +93,7 @@ const ProfileDetails = ({ onChildCreated }) => {
             name="dreamCareer"
             value={details.dreamCareer}
             placeholder="Dream Career"
-            onChange={handleChange} // Call handleChange
+            onChange={handleChange} 
           />
         </li>
       </ul>

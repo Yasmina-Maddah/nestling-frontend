@@ -5,8 +5,7 @@ import Logo from '../../assets/logo/1.png';
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const [activeLink, setActiveLink] = useState(''); // State to track the active link
-
+    const [activeLink, setActiveLink] = useState(''); 
     const handleLoginClick = () => {
         navigate('/login');
     };
@@ -16,7 +15,7 @@ const Navbar = () => {
     };
 
     const handleLinkClick = (link) => {
-        setActiveLink(link); // Update the active link
+        setActiveLink(link); 
     };
 
     return (

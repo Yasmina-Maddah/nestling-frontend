@@ -11,7 +11,7 @@ const ProfilePage = () => {
 
   const handleChildCreated = (id) => {
     setChildId(id);
-    localStorage.setItem("childId", id); // Store childId in localStorage
+    localStorage.setItem("childId", id); 
     navigate("/skills", { state: { childId: id } });
   };
 

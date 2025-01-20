@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../../api';
-import './ArticleForm.css'; // CSS specific to the article form
+import './ArticleForm.css'; 
 
 const ArticleForm = ({ article = null, onSuccess }) => {
     const [title, setTitle] = useState(article?.title || '');

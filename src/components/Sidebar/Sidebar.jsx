@@ -13,11 +13,11 @@ import skillsIcon from '../../assets/icons/skills.png';
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [activeLink, setActiveLink] = useState('Dashboard'); // Default active link
+  const [activeLink, setActiveLink] = useState('Dashboard'); 
 
   const handleNavClick = (path, linkName) => {
-    setActiveLink(linkName); // Set the active link
-    navigate(path); // Navigate to the route
+    setActiveLink(linkName); 
+    navigate(path); 
   };
 
   return (

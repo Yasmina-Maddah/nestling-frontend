@@ -1,6 +1,6 @@
 .footer {
-  background-color: #03989E; /* Light background */
-  color: #ffff; /* Dark text */
+  background-color: #03989E; 
+  color: #ffff; 
   padding: 20px;
   border-top: 1px solid #dee2e6;
 }
@@ -46,7 +46,7 @@
 }
 
 .footer-icon:hover {
-  transform: scale(1.2); /* Enlarge icon on hover */
+  transform: scale(1.2); 
 }
 
 .footer-contact-section {
@@ -61,7 +61,7 @@
 
 .footer-email {
   font-size: 14px;
-  color: #007bff; /* Link-like color */
+  color: #007bff; 
 }
 
 .footer-bottom {

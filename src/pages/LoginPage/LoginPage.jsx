@@ -19,7 +19,7 @@ const Login = () => {
         try {
             const response = await API.post('/login', formData);
             localStorage.setItem('token', response.data.token);
-            navigate('/dashboard'); // Navigate to the dashboard after login
+            navigate('/dashboard'); 
         } catch (err) {
             setError(err.response?.data?.error || 'Login failed');
         }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../api";
 import Sidebar from '../Sidebar/Sidebar';
-import './ArticlesList.css'; // CSS specific to the articles list
+import './ArticlesList.css'; 
 
 const ArticlesList = () => {
     const [articles, setArticles] = useState([]);
@@ -14,7 +14,7 @@ const ArticlesList = () => {
     const fetchArticles = async () => {
         try {
             const response = await API.get(`/articles`, { params: { query: search } });
-            setArticles(response.data.data); // Assuming paginated response
+            setArticles(response.data.data); 
         } catch (error) {
             console.error(error);
         }

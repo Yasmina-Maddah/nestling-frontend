@@ -33,7 +33,7 @@ const SignUp = () => {
                 password: formData.password,
             });
             localStorage.setItem('token', response.data.token);
-            navigate('/dashboard'); // Navigate to the dashboard after signup
+            navigate('/dashboard'); 
         } catch (err) {
             setError(err.response?.data?.message || 'Signup failed');
         }

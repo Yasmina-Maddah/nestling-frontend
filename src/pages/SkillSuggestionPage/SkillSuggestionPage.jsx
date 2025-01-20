@@ -1,44 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import API from "../../api"; // Your API client
+import API from "../../api"; 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./SkillSuggestionPage.css";
 import Brain from "../../assets/icons/knowledge.png";
 
 const SkillSuggestionPage = () => {
-  const [skills, setSkills] = useState([]); // State to store fetched skills
+  const [skills, setSkills] = useState([]); 
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Get the child profile ID from location state or local storage
 const childId = location.state?.childId || localStorage.getItem("childId");
 
 useEffect(() => {
   if (!childId) {
     alert("Child profile is not selected or created.");
-    navigate("/profile"); // Redirect to profile creation
+    navigate("/profile"); 
   } else {
-    console.log("Retrieved Child Profile ID:", childId); // Debugging
+    console.log("Retrieved Child Profile ID:", childId); 
   }
 }, [childId, navigate]);
 
 
-  // Fetch skills from the backend
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await API.get("/skills"); // Fetch skills
-        setSkills(response.data.skills); // Update skills state
+        const response = await API.get("/skills"); 
+        setSkills(response.data.skills); 
       } catch (error) {
         console.error("Error fetching skills:", error.response?.data || error.message);
         alert("Failed to load skills. Please try again.");
       }
     };
 
-    fetchSkills(); // Call fetchSkills function
+    fetchSkills(); 
   }, []);
 
-  // Handle skill selection
   const handleSkillSelect = async (skillId) => {
     if (!childId) {
       alert("Child profile is not selected or created.");
@@ -48,14 +45,13 @@ useEffect(() => {
     console.log("Child Profile ID:", childId);
 
     try {
-      // Make a POST request to assign a skill to the child
       await API.post(`/skills/assign`, {
         children_id: childId,
         skill_id: skillId,
       });
 
-      alert("Skill selected successfully!"); // Success message
-      navigate("/AIPage", { state: { childId, skillId } }); // Redirect to AI page
+      alert("Skill selected successfully!"); 
+      navigate("/AIPage", { state: { childId, skillId } }); 
     } catch (error) {
       console.error("Error selecting skill:", error.response?.data || error.message);
       alert("Failed to select skill. Please try again.");
@@ -72,11 +68,11 @@ useEffect(() => {
             <div
               key={skill.id}
               className="skill-card"
-              onClick={() => handleSkillSelect(skill.id)} // Trigger skill selection
+              onClick={() => handleSkillSelect(skill.id)} 
             >
               <div className="skill-card-header">
                 <img
-                  src={skill.icon || Brain} // Default icon fallback
+                  src={skill.icon || Brain} 
                   alt={skill.skill_name}
                   className="skill-card-icon"
                 />

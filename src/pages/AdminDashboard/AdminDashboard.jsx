@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import API from '../../api';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import ArticleForm from '../../components/ArticleForm/ArticleForm';
-import './AdminDashboard.css'; // Admin dashboard-specific styles
+import './AdminDashboard.css'; 
 
 const AdminDashboard = () => {
     const [articles, setArticles] = useState([]);

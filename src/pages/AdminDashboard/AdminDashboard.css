@@ -6,7 +6,7 @@
 
 .admin-content {
     flex: 1;
-    margin-left: 250px; /* Matches the width of the sidebar */
+    margin-left: 250px; 
     padding: 20px;
 }
 
